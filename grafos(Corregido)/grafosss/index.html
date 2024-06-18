@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./Image/Aut_urbanas.webp">
+        <div class="form-container">
+            <form id="connection-form">
+                <input type="text" placeholder="Agregar Colonia" id="colonia">
+                <button type="button" id="agregarColonia">Agregar</button>
+                <label for="coloniaA">Colonia Origen:</label>
+                <input type="text" id="coloniaA" name="coloniaA">
+                <label for="coloniaB">Colonia Destino:</label>
+                <input type="text" id="coloniaB" name="coloniaB">
+                <label for="km">Kilometros recorridos:</label>
+                <input type="text" id="km" name="km"><br>
+                <button type="button" id="AddConexion">Agregar Conexión</button><br>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="startVertex">Vértice Inicial para Dijkstra:</label>
+                        <input type="text" class="form-control" id="startVertex" placeholder="Ingrese el vértice inicial">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="search-container">
+            <div class="form-container">
+                <button type="button" id="RecorrProf">Recorrido en profundidad</button>
+                <button type="button" id="RecorrAnch">Recorrido en anchura</button>
+                <button type="button" id="distrak">Dijkstra</button>
+            </div>
+        
+            <div class="tabla-container">
+                <div class="form-container">
+                    <table id="tablaProfundidad" class="tabla-recorrido">
+                        <caption>Recorrido en Profundidad</caption>
+                        <thead>
+                            <tr>
+                                <th>Colonia</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyProfundidad">
+                        </tbody>
+                    </table>
+                </div>
+            <div class="tabla-container">
+                <table id="tablaAnchura" class="tabla-recorrido">
+                    <caption>Recorrido en Anchura</caption>
+                    <thead>
+                        <tr>
+                            <th>Colonia</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyAnchura">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <script type="module" src="./src/controllers/script.mjs" defer></script>
+</body>
+</html>
